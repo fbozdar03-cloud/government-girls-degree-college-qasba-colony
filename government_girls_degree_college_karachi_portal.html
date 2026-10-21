@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Girls Degree College Karachi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        collegeGreen: '#047857',
+                        collegeDarkGreen: '#065f46',
+                        collegeLightGreen: '#d1fae5',
+                        collegeOrange: '#d97706',
+                        collegeDark: '#0f172a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        /* Printable receipt optimization */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3"></div>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-emerald-900 text-white text-xs py-2 px-4 border-b border-emerald-800 flex justify-between items-center no-print">
+        <div class="container mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-emerald-400"></i> <span id="top-phone">+92 21 99211234</span></span>
+                <span class="hidden md:inline-flex items-center gap-1.5"><i class="fa-solid fa-envelope text-emerald-400"></i> <span id="top-email">info@ggdckarachi.edu.pk</span></span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="openNoticeModal()" class="text-xs bg-emerald-700 hover:bg-emerald-600 px-2.5 py-1 rounded text-white flex items-center gap-1 transition-colors">
+                    <i class="fa-solid fa-plus text-[10px]"></i> Manage Notices
+                </button>
+                <button onclick="openContactModal()" class="text-xs bg-emerald-800 hover:bg-emerald-700 px-2.5 py-1 rounded text-emerald-200 hover:text-white flex items-center gap-1 transition-colors">
+                    <i class="fa-solid fa-pen-to-square text-[10px]"></i> Edit Contact Info
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN COLLEGE HEADER -->
+    <header class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40 no-print">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-700 to-teal-500 flex items-center justify-center text-white text-2xl font-bold shadow-md shadow-emerald-700/20">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 tracking-tight">Government Girls Degree College Karachi</h1>
+                    <p class="text-xs text-emerald-700 font-semibold tracking-wider uppercase">Affiliated with Board of Intermediate & University of Karachi</p>
+                </div>
+            </div>
+
+            <!-- NAVIGATION MENU -->
+            <nav class="flex flex-wrap items-center gap-1 md:gap-2 text-sm font-semibold text-slate-600">
+                <a href="#hero" class="px-3 py-2 rounded-lg text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-colors">Home</a>
+                <a href="#notice-board" class="px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-slate-100 transition-colors">Notices</a>
+                <a href="#programs" class="px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-slate-100 transition-colors">Programs</a>
+                <a href="#admissions" class="px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-slate-100 transition-colors">Admissions</a>
+                <a href="#contact" class="px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-slate-100 transition-colors">Contact</a>
+                <a href="#admissions" class="bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-xl transition-all shadow-md shadow-emerald-700/20 flex items-center gap-2 ml-2">
+                    <i class="fa-solid fa-file-signature text-xs"></i> Apply Now
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO BANNER SECTION -->
+    <section id="hero" class="relative bg-slate-900 text-white py-16 md:py-24 overflow-hidden no-print">
+        <div class="absolute inset-0 opacity-25">
+            <img id="hero-img" src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80" alt="College Building" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
+                    <i class="fa-solid fa-graduation-cap"></i> Session 2026-2027 Admissions Open
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">Empowering Women Through Higher Education</h2>
+                <p class="text-slate-300 text-sm md:text-base">Join Government Girls Degree College Karachi for quality undergraduate and graduate programs tailored for modern career success.</p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <a href="#admissions" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-emerald-600/30 text-sm">
+                        Online Admission Form
+                    </a>
+                    <button onclick="openHeroImageModal()" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3 rounded-xl backdrop-blur transition-all border border-white/20 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-image"></i> Change Banner Image
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFICIAL NOTICE BOARD SECTION (MATCHING SCREENSHOT EXACTLY) -->
+    <section id="notice-board" class="py-12 bg-white border-b border-slate-200">
+        <div class="container mx-auto px-4">
+            
+            <!-- SECTION HEADER -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-bullhorn text-emerald-600"></i> Official Notice Board
+                    </h3>
+                    <p class="text-xs text-slate-500 font-medium mt-1">Government Girls Degree College Karachi Updates</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span> Live Bulletins
+                    </span>
+                    <button onclick="openNoticeModal()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-lg border border-slate-300 transition-colors no-print flex items-center gap-1">
+                        <i class="fa-solid fa-plus text-[11px]"></i> Add Notice
+                    </button>
+                </div>
+            </div>
+
+            <!-- DYNAMIC NOTICE LIST CARDS -->
+            <div id="notice-list-container" class="space-y-4 max-w-5xl mx-auto">
+                <!-- Rendered Dynamically via JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACADEMIC PROGRAMS SHOWCASE -->
+    <section id="programs" class="py-16 bg-slate-50 border-b border-slate-200 no-print">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h3 class="text-2xl font-bold text-slate-900">Offered Degree Programs</h3>
+                <p class="text-xs text-slate-500 mt-2">Comprehensive curriculum designed for academic excellence and professional growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Program 1: BBA -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">BBA (Bachelor of Business Administration)</h4>
+                    <p class="text-xs text-slate-500 mt-2">4-Year Degree focused on business management, accounting, marketing, and finance.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                        <span>Duration: 4 Years</span>
+                        <span class="text-emerald-700 font-bold">Merit-Based</span>
+                    </div>
+                </div>
+
+                <!-- Program 2: BCA -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">BCA (Bachelor of Computer Applications)</h4>
+                    <p class="text-xs text-slate-500 mt-2">Software engineering, computer science applications, web design, and database systems.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                        <span>Duration: 4 Years</span>
+                        <span class="text-emerald-700 font-bold">Merit-Based</span>
+                    </div>
+                </div>
+
+                <!-- Program 3: BSc -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">BSc (Bachelor of Science)</h4>
+                    <p class="text-xs text-slate-500 mt-2">Specializations in Botany, Zoology, Chemistry, Physics, and Mathematics.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                        <span>Duration: 2 - 4 Years</span>
+                        <span class="text-emerald-700 font-bold">Open Merit</span>
+                    </div>
+                </div>
+
+                <!-- Program 4: MBA -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">MBA (Master of Business Administration)</h4>
+                    <p class="text-xs text-slate-500 mt-2">Postgraduate management studies for future leaders and corporate managers.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                        <span>Duration: 2 Years</span>
+                        <span class="text-emerald-700 font-bold">Graduate Entry</span>
+                    </div>
+                </div>
+
+                <!-- Program 5: B.Com / BM -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900">B.Com / BM (Business Management)</h4>
+                    <p class="text-xs text-slate-500 mt-2">Comprehensive studies in commerce, taxation, auditing, and corporate laws.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                        <span>Duration: 2 - 4 Years</span>
+                        <span class="text-emerald-700 font-bold">Open Merit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONLINE ADMISSION FORM SECTION -->
+    <section id="admissions" class="py-16 bg-white border-b border-slate-200 no-print">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold uppercase text-emerald-700 tracking-wider">Session 2026-2027</span>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">Online Admission Application Form</h3>
+                <p class="text-xs text-slate-500 mt-1">Fill in the details accurately. Printable confirmation slip will be generated upon submission.</p>
+            </div>
+
+            <form id="admission-form" onsubmit="handleAdmissionSubmit(event)" class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Full Applicant Name *</label>
+                        <input type="text" id="app-name" required placeholder="e.g., Fatima Zahra" class="w-full bg-white border border-slate-300 rounded-xl p-3 focus:outline-none focus:border-emerald-600">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Father's Name *</label>
+                        <input type="text" id="app-father" required placeholder="e.g., Muhammad Ali" class="w-full bg-white border border-slate-300 rounded-xl p-3 focus:outline-none focus:border-emerald-600">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Select Academic Program *</label>
+                        <select id="app-program" required class="w-full bg-white border border-slate-300 rounded-xl p-3 focus:outline-none focus:border-emerald-600 font-medium text-slate-800">
+                            <option value="BBA">BBA (Bachelor of Business Administration)</option>
+                            <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                            <option value="BSc">BSc (Bachelor of Science)</option>
+                            <option value="MBA">MBA (Master of Business Administration)</option>
+                            <option value="B.Com / BM">B.Com / Business Management (BM)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Contact Phone Number *</label>
+                        <input type="tel" id="app-phone" required placeholder="e.g., 0300-1234567" class="w-full bg-white border border-slate-300 rounded-xl p-3 focus:outline-none focus:border-emerald-600">
+                    </div>
+                </div>
+
+                <div class="text-xs">
+                    <label class="block font-semibold text-slate-700 mb-1">Address *</label>
+                    <textarea id="app-address" required rows="2" placeholder="Full residential address in Karachi" class="w-full bg-white border border-slate-300 rounded-xl p-3 focus:outline-none focus:border-emerald-600"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-700/20 text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Application & Print Receipt
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-12 text-xs border-t border-slate-800 no-print">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-white font-bold text-base mb-3">Government Girls Degree College Karachi</h4>
+                <p class="text-slate-400 leading-relaxed">Dedicated to providing empowering higher education to female students with state-of-the-art facilities and experienced faculty.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">Contact Information</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-emerald-400 mt-0.5"></i> <span id="footer-address">Block 5, Gulshan-e-Iqbal, Karachi, Sindh, Pakistan</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-emerald-400"></i> <span id="footer-phone">+92 21 99211234</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-emerald-400"></i> <span id="footer-email">info@ggdckarachi.edu.pk</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">College Portal Admin</h4>
+                <div class="space-y-2">
+                    <button onclick="openContactModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold p-2.5 rounded-xl border border-slate-700 transition-colors text-left flex items-center justify-between">
+                        <span>Update Contact Information</span>
+                        <i class="fa-solid fa-pen text-slate-400"></i>
+                    </button>
+                    <button onclick="openNoticeModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold p-2.5 rounded-xl border border-slate-700 transition-colors text-left flex items-center justify-between">
+                        <span>Manage Live Bulletins</span>
+                        <i class="fa-solid fa-bullhorn text-slate-400"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 pt-6 border-t border-slate-800 text-center text-slate-500">
+            &copy; 2026 Government Girls Degree College Karachi. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- MODAL 1: ADD / EDIT NOTICE BULLETIN -->
+    <div id="notice-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 no-print">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-6 relative shadow-2xl border border-slate-200">
+            <button onclick="closeNoticeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-bullhorn text-emerald-600"></i> Add Live Bulletin / Notice
+            </h3>
+            <form id="notice-form" onsubmit="saveNotice(event)" class="space-y-4 text-xs">
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Month Abbr (e.g. OCT)</label>
+                        <input type="text" id="n-month" required placeholder="OCT" class="w-full border border-slate-300 rounded-xl p-2.5 uppercase font-bold text-emerald-700">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Date Number (e.g. 24)</label>
+                        <input type="text" id="n-day" required placeholder="24" class="w-full border border-slate-300 rounded-xl p-2.5 font-bold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Date Badge Color Theme</label>
+                    <select id="n-color" class="w-full border border-slate-300 rounded-xl p-2.5 font-medium">
+                        <option value="emerald">Green Badge (e.g. Submissions, Events)</option>
+                        <option value="orange">Orange Badge (e.g. Merit Lists, Deadlines)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Notice Title *</label>
+                    <input type="text" id="n-title" required placeholder="e.g. Submission of Admission Forms for BBA, BCA, & MBA Programs" class="w-full border border-slate-300 rounded-xl p-2.5 font-bold">
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Notice Description *</label>
+                    <textarea id="n-desc" required rows="3" placeholder="e.g. All interested female candidates must submit online application slips before deadline." class="w-full border border-slate-300 rounded-xl p-2.5"></textarea>
+                </div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeNoticeModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-600 font-semibold">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold shadow-md shadow-emerald-700/20">Publish Notice</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: UPDATE CONTACT INFORMATION -->
+    <div id="contact-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 no-print">
+        <div class="bg-white rounded-2xl w-full max-w-md p-6 relative shadow-2xl border border-slate-200">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Edit College Contact Information</h3>
+            <form onsubmit="saveContactInfo(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Phone Number</label>
+                    <input type="text" id="edit-phone" value="+92 21 99211234" class="w-full border border-slate-300 rounded-xl p-3 font-medium">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Email Address</label>
+                    <input type="email" id="edit-email" value="info@ggdckarachi.edu.pk" class="w-full border border-slate-300 rounded-xl p-3 font-medium">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">College Address</label>
+                    <textarea id="edit-address" rows="2" class="w-full border border-slate-300 rounded-xl p-3 font-medium">Block 5, Gulshan-e-Iqbal, Karachi, Sindh, Pakistan</textarea>
+                </div>
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeContactModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-600 font-semibold">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: CHANGE HERO IMAGE -->
+    <div id="hero-img-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 no-print">
+        <div class="bg-white rounded-2xl w-full max-w-md p-6 relative shadow-2xl border border-slate-200">
+            <button onclick="closeHeroImageModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Change Banner Image URL</h3>
+            <form onsubmit="saveHeroImage(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Image Web URL</label>
+                    <input type="url" id="hero-url-input" required value="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80" class="w-full border border-slate-300 rounded-xl p-3 font-medium">
+                </div>
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeHeroImageModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-600 font-semibold">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold">Update Banner</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Default Official Notices Data matching user screenshot
+        let notices = [
+            {
+                id: 1,
+                month: 'OCT',
+                day: '24',
+                color: 'emerald', // Green badge
+                title: 'Submission of Admission Forms for BBA, BCA, & MBA Programs',
+                description: 'All interested female candidates must submit online application slips before deadline.'
+            },
+            {
+                id: 2,
+                month: 'OCT',
+                day: '28',
+                color: 'orange', // Orange badge
+                title: '1st Merit List Announcement for B.Com & BSc Programs',
+                description: 'Merit list will be published on the official notice board and website portal.'
+            },
+            {
+                id: 3,
+                month: 'NOV',
+                day: '02',
+                color: 'emerald', // Green badge
+                title: 'Orientation Day for New Batch (Session 2026-27)',
+                description: 'Welcome ceremony for all newly enrolled students in the college main auditorium.'
+            }
+        ];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderNotices();
+        });
+
+        // Render Notice Board Items
+        function renderNotices() {
+            const container = document.getElementById('notice-list-container');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            notices.forEach(n => {
+                const isEmerald = n.color === 'emerald';
+                const badgeBg = isEmerald ? 'bg-emerald-800' : 'bg-amber-600';
+
+                const card = document.createElement('div');
+                card.className = 'bg-white border border-slate-200/80 rounded-2xl p-4 sm:p-5 flex items-center gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-shadow relative group';
+                
+                card.innerHTML = `
+                    <!-- DATE BADGE -->
+                    <div class="shrink-0 ${badgeBg} text-white w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex flex-col items-center justify-center font-bold shadow-md">
+                        <span class="text-[10px] sm:text-xs tracking-wider uppercase opacity-90">${n.month}</span>
+                        <span class="text-lg sm:text-2xl leading-none mt-0.5">${n.day}</span>
+                    </div>
+
+                    <!-- NOTICE DETAILS -->
+                    <div class="flex-1 min-w-0 pr-8">
+                        <h4 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">${n.title}</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">${n.description}</p>
+                    </div>
+
+                    <!-- DELETE BUTTON FOR ADMIN -->
+                    <button onclick="deleteNotice(${n.id})" class="absolute top-4 right-4 text-slate-300 hover:text-rose-500 transition-colors opacity-0 group-hover:opacity-100 p-1 no-print" title="Delete Notice">
+                        <i class="fa-solid fa-trash-can text-sm"></i>
+                    </button>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Add Notice Handler
+        function saveNotice(e) {
+            e.preventDefault();
+            const month = document.getElementById('n-month').value.trim().toUpperCase();
+            const day = document.getElementById('n-day').value.trim();
+            const color = document.getElementById('n-color').value;
+            const title = document.getElementById('n-title').value.trim();
+            const description = document.getElementById('n-desc').value.trim();
+
+            const newNotice = {
+                id: Date.now(),
+                month: month,
+                day: day.padStart(2, '0'),
+                color: color,
+                title: title,
+                description: description
+            };
+
+            notices.unshift(newNotice);
+            renderNotices();
+            closeNoticeModal();
+            document.getElementById('notice-form').reset();
+            showToast('New notice published to Live Bulletins!', 'success');
+        }
+
+        // Delete Notice
+        function deleteNotice(id) {
+            notices = notices.filter(n => n.id !== id);
+            renderNotices();
+            showToast('Notice deleted successfully', 'info');
+        }
+
+        // Contact Information Updates
+        function saveContactInfo(e) {
+            e.preventDefault();
+            const phone = document.getElementById('edit-phone').value;
+            const email = document.getElementById('edit-email').value;
+            const address = document.getElementById('edit-address').value;
+
+            document.getElementById('top-phone').innerText = phone;
+            document.getElementById('top-email').innerText = email;
+            document.getElementById('footer-phone').innerText = phone;
+            document.getElementById('footer-email').innerText = email;
+            document.getElementById('footer-address').innerText = address;
+
+            closeContactModal();
+            showToast('Contact information updated!', 'success');
+        }
+
+        // Hero Image Update
+        function saveHeroImage(e) {
+            e.preventDefault();
+            const url = document.getElementById('hero-url-input').value;
+            document.getElementById('hero-img').src = url;
+            closeHeroImageModal();
+            showToast('Banner image updated!', 'success');
+        }
+
+        // Admission Form Handler & Printable Receipt
+        function handleAdmissionSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('app-name').value;
+            const father = document.getElementById('app-father').value;
+            const program = document.getElementById('app-program').value;
+            const phone = document.getElementById('app-phone').value;
+            const appNo = 'GGDC-' + Math.floor(100000 + Math.random() * 900000);
+            const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Admission Slip - Government Girls Degree College Karachi</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 40px; color: #0f172a; max-width: 800px; margin: auto; }
+                        .header { text-align: center; border-bottom: 2px solid #047857; padding-bottom: 15px; margin-bottom: 30px; }
+                        .title { font-size: 22px; font-weight: bold; color: #065f46; text-uppercase: uppercase; }
+                        .subtitle { font-size: 13px; color: #475569; margin-top: 5px; }
+                        .box { border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px; margin-bottom: 25px; background-color: #f8fafc; }
+                        .row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+                        .label { font-weight: bold; color: #334155; }
+                        .val { font-weight: bold; color: #0f172a; }
+                        .footer { margin-top: 50px; text-align: center; font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 15px; }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <div class="title">Government Girls Degree College Karachi</div>
+                        <div class="subtitle">Official Admission Application Receipt (Session 2026-2027)</div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 13px;">
+                        <div><strong>Application No:</strong> <span style="color: #047857; font-size: 16px;">${appNo}</span></div>
+                        <div><strong>Submission Date:</strong> ${dateStr}</div>
+                    </div>
+
+                    <div class="box">
+                        <div class="row"><span class="label">Applicant Name:</span><span class="val">${name}</span></div>
+                        <div class="row"><span class="label">Father's Name:</span><span class="val">${father}</span></div>
+                        <div class="row"><span class="label">Applied Program:</span><span class="val" style="color: #047857;">${program}</span></div>
+                        <div class="row"><span class="label">Contact Phone:</span><span class="val">${phone}</span></div>
+                        <div class="row"><span class="label">Status:</span><span class="val" style="color: #d97706;">Application Received (Pending Merit List)</span></div>
+                    </div>
+
+                    <div style="font-size: 12px; color: #475569; line-height: 1.6;">
+                        <strong>Instructions:</strong> Please retain this printed application slip for your records. Check the <strong>Official Notice Board</strong> at the college portal for merit list announcements.
+                    </div>
+
+                    <div class="footer">
+                        Government Girls Degree College Karachi — Document Generated Electronically
+                    </div>
+
+                    <script>
+                        window.onload = function() { window.print(); }
+                    <\/script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            document.getElementById('admission-form').reset();
+            showToast('Application submitted & printable receipt generated!', 'success');
+        }
+
+        // Modal Controls
+        function openNoticeModal() { document.getElementById('notice-modal').classList.remove('hidden'); }
+        function closeNoticeModal() { document.getElementById('notice-modal').classList.add('hidden'); }
+
+        function openContactModal() { document.getElementById('contact-modal').classList.remove('hidden'); }
+        function closeContactModal() { document.getElementById('contact-modal').classList.add('hidden'); }
+
+        function openHeroImageModal() { document.getElementById('hero-img-modal').classList.remove('hidden'); }
+        function closeHeroImageModal() { document.getElementById('hero-img-modal').classList.add('hidden'); }
+
+        // Toast Notification System
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            const colors = {
+                success: 'bg-emerald-800 border-emerald-700 text-white',
+                info: 'bg-slate-900 border-slate-800 text-white',
+                error: 'bg-rose-800 border-rose-700 text-white'
+            };
+            toast.className = `px-4 py-3 rounded-xl border text-xs font-semibold shadow-xl flex items-center gap-2 transition-all ${colors[type] || colors.info}`;
+            toast.innerHTML = `<i class="fa-solid fa-circle-info"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
